@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+    <!-- Database Connection Settings -->
+    <session-factory>
+        <!-- JDBC Database connection settings -->
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/hr_management_system</property>
+        <property name="hibernate.connection.username">postgres</property>
+        <property name="hibernate.connection.password">postgres</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+
+        <!--JDBC connection pool settings ... using built-in test pool-->
+        <property name="connection.pool_size">1</property>
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">false</property>
+        <property name="format_sql">true</property>
+
+        <!-- Mention annotated entity classes -->
+        <mapping class="org.example.entities.Employee"/>
+        <mapping class="org.example.entities.Manager"/>
+        <mapping class="org.example.entities.Department"/>
+        <mapping class="org.example.entities.Project"/>
+        <!-- Add more classes as needed -->
+    </session-factory>
+</hibernate-configuration>
